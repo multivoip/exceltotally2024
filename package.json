@@ -4,7 +4,7 @@
   "description": "Electron and Express Application",
   "main": "main.js",
   "scripts": {
-    "start": "index.js"
+    "start": "main.js"
   },
   "author": "",
   "license": "ISC",
