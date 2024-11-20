@@ -1,0 +1,10 @@
+appId: com.example.exceltotally
+productName: Excel to Tally Converter
+directories:
+  output: dist
+files:
+  - '**/*'
+asar: false
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
