@@ -42,9 +42,9 @@ expressApp.get('/', (req, res) => {
   });
 
   expressApp.use('/upload',(req, res, next) =>  {
-	if (req.method == 'POST') {
+	if (req.method === 'POST') {
 		//console.log(req);
-        var jsonString = '';
+       let jsonString = '';
         req.on('data', function (data) {
             jsonString += data;
         });
@@ -57,7 +57,7 @@ expressApp.get('/', (req, res) => {
             res.writeHead(200, { 'Content-Type': 'text/html' });
             res.end(strXml);	
         });
-    }	if (req.method == 'GET') {
+    }	else if (req.method == 'GET') {
         res.end('Please Use exceltotally.netlify.com for upload'); 
 
     }
@@ -331,17 +331,17 @@ let strXml = ""; // Declare strXml explicitly // Declare strXml explicitly
   strXml += "<REQUESTDATA>";
       
   
-      for (var i = 0; i < excelData.length; i++)
-                      {console.log(excelData[i]);
+      for (var i = 0; i < data.length; i++)
+                      {console.log(data[i]);
 		       	 
-                          let VOUCHERTYPE     = (excelData[i]["VOUCHERTYPE"]);
-                          let DATE            = (excelData[i]["DATE"]);
-                          let NARRATION       = (excelData[i]["NARRATION"]);
-                          let VOUCHERNUMBER   = (excelData[i]["VOUCHERNUMBER"]);
-                          let DRLEDGER        = (excelData[i]["DR.LEDGER"]);
-                          let CRLEDGER        = (excelData[i]["CR.LEDGER"]);
-                          let AMOUNT          = (excelData[i]["LEDGERAMOUNT"]);
-                          let AMOUNT2          = (-(excelData[i]["LEDGERAMOUNT"]));
+                          let VOUCHERTYPE     = (data[i]["VOUCHERTYPE"]);
+                          let DATE            = (data[i]["DATE"]);
+                          let NARRATION       = (data[i]["NARRATION"]);
+                          let VOUCHERNUMBER   = (data[i]["VOUCHERNUMBER"]);
+                          let DRLEDGER        = (data[i]["DR.LEDGER"]);
+                          let CRLEDGER        = (data[i]["CR.LEDGER"]);
+                          let AMOUNT          = (data[i]["LEDGERAMOUNT"]);
+                          let AMOUNT2          = (-(data[i]["LEDGERAMOUNT"]));
                           let bool            = "";
                           let bool1           = "";
                           let bool2           = "Yes";
@@ -351,8 +351,8 @@ let strXml = ""; // Declare strXml explicitly // Declare strXml explicitly
                           }else {bool="No", bool1  = "Yes"};
                           
                           if (VOUCHERTYPE == "Receipt" || VOUCHERTYPE == "Contra"){
-                              DRLEDGER        = (excelData[i]["CR.LEDGER"]);
-                              CRLEDGER        = (excelData[i]["DR.LEDGER"]);
+                              DRLEDGER        = (data[i]["CR.LEDGER"]);
+                              CRLEDGER        = (data[i]["DR.LEDGER"]);
                           };
                         
                           
@@ -360,8 +360,8 @@ let strXml = ""; // Declare strXml explicitly // Declare strXml explicitly
                                bool2           = "No";
                           };
                           if (VOUCHERTYPE == "Payment" || VOUCHERTYPE == "Journal"){
-                              AMOUNT          = (-(excelData[i]["LEDGERAMOUNT"]));
-                              AMOUNT2          = (excelData[i]["LEDGERAMOUNT"]);
+                              AMOUNT          = (-(data[i]["LEDGERAMOUNT"]));
+                              AMOUNT2          = (data[i]["LEDGERAMOUNT"]);
                           };
                               
                           strXml += "<TALLYMESSAGE xmlns:UDF=\"TallyUDF\">";
