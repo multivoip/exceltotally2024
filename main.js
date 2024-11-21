@@ -325,7 +325,7 @@ function voucher(data){
       
   
       for (var i = 0; i < excelData.length; i++)
-                      {
+                      {console.log(excelData[i]);
                           let VOUCHERTYPE     = (excelData[i]["VOUCHERTYPE"]);
                           let DATE            = (excelData[i]["DATE"]);
                           let NARRATION       = (excelData[i]["NARRATION"]);
