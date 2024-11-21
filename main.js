@@ -317,7 +317,7 @@ expressApp.listen(PORT, () => {
 
 
 function voucher(data){
-letlet strXml = ""; // Declare strXml explicitly // Declare strXml explicitly
+let strXml = ""; // Declare strXml explicitly // Declare strXml explicitly
   strXml += "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
   strXml += "<ENVELOPE>";
   strXml += "<HEADER>";
