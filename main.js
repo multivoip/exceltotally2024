@@ -49,9 +49,9 @@ expressApp.get('/', (req, res) => {
             jsonString += data;
         });
         req.on('end', function () {
-            console.log(JSON.parse(jsonString));
-			const excelData = JSON.parse(jsonString);
-			voucher(excelData);
+            	const excelData = JSON.parse(jsonString);
+		 console.log(excelData); // Debugging
+			const strXml = voucher(excelData); // Pass excelData to voucher
             res.setHeader('Access-Control-Allow-Origin', '*');
             res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
             res.writeHead(200, { 'Content-Type': 'text/html' });
@@ -73,9 +73,9 @@ expressApp.post('/dxbrecpay',(req, res, next) =>  {
             jsonString += data;
         });
         req.on('end', function () {
-           // console.log(JSON.parse(jsonString));
-			excelData = JSON.parse(jsonString);
-			dxbrecpay();
+                 const excelData = JSON.parse(jsonString);
+		 console.log(excelData); // Debugging
+			const strXml = dxbrecpay(excelData); // Pass excelData to voucher
 			res.header("Access-Control-Allow-Origin", "*");
             res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 			res.writeHead(200, 'OK', {'Content-Type': 'text/html'})
@@ -98,10 +98,10 @@ expressApp.post('/ledger',(req, res, next) =>  {
         });
 
         req.on('end', function () {
-            console.log(JSON.parse(jsonString));
-			excelData = JSON.parse(jsonString);
-			ledger();
-			 res.header("Access-Control-Allow-Origin", "*");
+                 const excelData = JSON.parse(jsonString);
+		 console.log(excelData); // Debugging
+			const strXml = ledger(excelData); // Pass excelData to voucher
+			res.header("Access-Control-Allow-Origin", "*");
 			res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 			res.writeHead(200, 'OK', {'Content-Type': 'text/html'})
             res.end(strXml)
@@ -119,9 +119,10 @@ expressApp.post('/stock',(req, res, next) =>  {
         });
 
         req.on('end', function () {
-            console.log(JSON.parse(jsonString));
-			excelData = JSON.parse(jsonString);
-			stock();
+                 const excelData = JSON.parse(jsonString);
+		 console.log(excelData); // Debugging
+			const strXml = stock(excelData); // Pass excelData to voucher
+			
 			 res.header("Access-Control-Allow-Origin", "*");
 			res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 			res.writeHead(200, 'OK', {'Content-Type': 'text/html'})
@@ -139,9 +140,10 @@ expressApp.post('/sales',(req, res, next) =>  {
             jsonString += data;
         });
         req.on('end', function () {
-            console.log(JSON.parse(jsonString));
-			excelData = JSON.parse(jsonString);
-			sales();
+                 const excelData = JSON.parse(jsonString);
+		 console.log(excelData); // Debugging
+			const strXml = sales(excelData); // Pass excelData to voucher
+			
 			res.header("Access-Control-Allow-Origin", "*");
 			res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 			res.writeHead(200, 'OK', {'Content-Type': 'text/html'})
@@ -158,9 +160,10 @@ expressApp.post('/salesdxb',(req, res, next) =>  {
             jsonString += data;
         });
 			req.on('end', function () {
-          //  console.log(JSON.parse(jsonString));
-			excelData = JSON.parse(jsonString);
-			dvkd();
+                 const excelData = JSON.parse(jsonString);
+		 console.log(excelData); // Debugging
+			const strXml = dvkd(excelData); // Pass excelData to voucher
+			
 			res.header("Access-Control-Allow-Origin", "*");
 			res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 			res.writeHead(200, 'OK', {'Content-Type': 'text/html'})
@@ -177,9 +180,10 @@ expressApp.post('/purchasedxb',(req, res, next) =>  {
             jsonString += data;
         });
         req.on('end', function () {
-            console.log(JSON.parse(jsonString));
-			excelData = JSON.parse(jsonString);
-			purchase1();
+                 const excelData = JSON.parse(jsonString);
+		 console.log(excelData); // Debugging
+			const strXml = purchase1(excelData); // Pass excelData to voucher
+			
 			res.header("Access-Control-Allow-Origin", "*");
 			res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 			res.writeHead(200, 'OK', {'Content-Type': 'text/html'})
@@ -198,9 +202,10 @@ expressApp.post('/purchase',(req, res, next) =>  {
         });
 
         req.on('end', function () {
-            console.log(JSON.parse(jsonString));
-			excelData = JSON.parse(jsonString);
-			purchase();
+                 const excelData = JSON.parse(jsonString);
+		 console.log(excelData); // Debugging
+			const strXml = purchase(excelData); // Pass excelData to voucher
+			
 			 res.header("Access-Control-Allow-Origin", "*");
 			res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 			res.writeHead(200, 'OK', {'Content-Type': 'text/html'})
@@ -220,9 +225,10 @@ expressApp.post('/husk',(req, res, next) =>  {
             jsonString += data;
         });
         req.on('end', function () {
-            console.log(JSON.parse(jsonString));
-			excelData = JSON.parse(jsonString);
-			husk();
+                 const excelData = JSON.parse(jsonString);
+		 console.log(excelData); // Debugging
+			const strXml = husk(excelData); // Pass excelData to voucher
+			
 			res.header("Access-Control-Allow-Origin", "*");
 			res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 			res.writeHead(200, 'OK', {'Content-Type': 'text/html'})
@@ -241,9 +247,10 @@ expressApp.post('/SalesIBW',(req, res, next) =>  {
         });
 
         req.on('end', function () {
-            console.log(JSON.parse(jsonString));
-			excelData = JSON.parse(jsonString);
-			SalesIBW();
+                 const excelData = JSON.parse(jsonString);
+		 console.log(excelData); // Debugging
+			const strXml = SalesIBW(excelData); // Pass excelData to voucher
+			
 			 res.header("Access-Control-Allow-Origin", "*");
 			res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 			res.writeHead(200, 'OK', {'Content-Type': 'text/html'})
@@ -265,10 +272,10 @@ expressApp.post('/fees',(req, res, next) =>  {
         });
 
         req.on('end', function () {
-            console.log(JSON.parse(jsonString));
-			excelData = JSON.parse(jsonString);
-			fees();
-			 res.header("Access-Control-Allow-Origin", "*");
+                 const excelData = JSON.parse(jsonString);
+		 console.log(excelData); // Debugging
+			const strXml = fees(excelData); // Pass excelData to voucher
+		        res.header("Access-Control-Allow-Origin", "*");
 			res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 			res.writeHead(200, 'OK', {'Content-Type': 'text/html'})
             res.end(strXml)
@@ -287,10 +294,10 @@ expressApp.post('/QHREC',(req, res, next) =>  {
         });
 
         req.on('end', function () {
-            console.log(JSON.parse(jsonString));
-			excelData = JSON.parse(jsonString);
-			QHREC();
-			 res.header("Access-Control-Allow-Origin", "*");
+                 const excelData = JSON.parse(jsonString);
+		 console.log(excelData); // Debugging
+			const strXml = QHREC(excelData); // Pass excelData to voucher
+			res.header("Access-Control-Allow-Origin", "*");
 			res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 			res.writeHead(200, 'OK', {'Content-Type': 'text/html'})
             res.end(strXml)
@@ -310,7 +317,7 @@ expressApp.listen(PORT, () => {
 
 
 function voucher(data){
-    strXml = "";
+letlet strXml = ""; // Declare strXml explicitly // Declare strXml explicitly
   strXml += "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
   strXml += "<ENVELOPE>";
   strXml += "<HEADER>";
@@ -326,6 +333,7 @@ function voucher(data){
   
       for (var i = 0; i < excelData.length; i++)
                       {console.log(excelData[i]);
+		       	 
                           let VOUCHERTYPE     = (excelData[i]["VOUCHERTYPE"]);
                           let DATE            = (excelData[i]["DATE"]);
                           let NARRATION       = (excelData[i]["NARRATION"]);
@@ -404,7 +412,7 @@ function voucher(data){
   };
   
    function ledger(){
-    strXml = "";
+   let strXml = ""; // Declare strXml explicitly
   strXml += "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
   strXml += "<ENVELOPE>";
   strXml += "<HEADER>";
@@ -494,7 +502,7 @@ function voucher(data){
   };
   
    function stock(){
-    strXml = "";
+   let strXml = ""; // Declare strXml explicitly
   strXml += "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
   strXml += "<ENVELOPE>";
   strXml += "<HEADER>";
@@ -598,7 +606,7 @@ function voucher(data){
   };
   
    function sales(){
-    strXml = "";
+   let strXml = ""; // Declare strXml explicitly
   strXml += "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
   strXml += "<ENVELOPE>";
   strXml += "<HEADER>";
@@ -1248,7 +1256,7 @@ function voucher(data){
   };
   
    function purchase(){
-    strXml = "";
+   let strXml = ""; // Declare strXml explicitly
   strXml += "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
   strXml += "<ENVELOPE>";
   strXml += "<HEADER>";
@@ -2041,7 +2049,7 @@ function voucher(data){
   
    function dxbrecpay(){
       console.log("dxbrecpay() function called.");
-    strXml = "";
+   let strXml = ""; // Declare strXml explicitly
   strXml += "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
   strXml += "<ENVELOPE>";
   strXml += "<HEADER>";
@@ -2157,7 +2165,7 @@ function voucher(data){
   
   function dvkd(){
       console.log("salesdxb() function called.");
-  strXml = "";
+ let strXml = ""; // Declare strXml explicitly
   strXml += "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
   strXml += "<ENVELOPE>";
   strXml += "<HEADER>";
@@ -2272,7 +2280,7 @@ function voucher(data){
   };
   
   function purchase1(){
-      strXml = "";
+     let strXml = ""; // Declare strXml explicitly
       strXml += "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
       strXml += "<ENVELOPE>";
       strXml += "<HEADER>";
@@ -2392,7 +2400,7 @@ function voucher(data){
   
   
   function fees(){
-    strXml = "";
+   let strXml = ""; // Declare strXml explicitly
   strXml += "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
   strXml += "<ENVELOPE>";
   strXml += "<HEADER>";
@@ -2605,7 +2613,7 @@ function voucher(data){
   
   
   function SalesIBW(){
-    strXml = "";
+   let strXml = ""; // Declare strXml explicitly
   strXml += "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
   strXml += "<ENVELOPE>";
   strXml += "<HEADER>";
@@ -2842,7 +2850,7 @@ function voucher(data){
       return strXml;
   };
    function QHREC(){
-    strXml = "";
+   let strXml = ""; // Declare strXml explicitly
   strXml += "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
   strXml += "<ENVELOPE>";
   strXml += "<HEADER>";
