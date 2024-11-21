@@ -68,7 +68,7 @@ expressApp.post('/dxbrecpay',(req, res, next) =>  {
 
 	if (req.method == 'POST') {
 		//console.log(req);
-        var jsonString = '';
+         let jsonString = '';
         req.on('data', function (data) {
             jsonString += data;
         });
@@ -91,7 +91,7 @@ expressApp.post('/dxbrecpay',(req, res, next) =>  {
 expressApp.post('/ledger',(req, res, next) =>  {
 
 	if (req.method == 'POST') {
-        var jsonString = '';
+         let jsonString = '';
 
         req.on('data', function (data) {
             jsonString += data;
@@ -112,7 +112,7 @@ expressApp.post('/ledger',(req, res, next) =>  {
 expressApp.post('/stock',(req, res, next) =>  {
 
 	if (req.method == 'POST') {
-        var jsonString = '';
+        let jsonString = '';
 
         req.on('data', function (data) {
             jsonString += data;
@@ -135,7 +135,7 @@ expressApp.post('/stock',(req, res, next) =>  {
 expressApp.post('/sales',(req, res, next) =>  {
 
 	if (req.method == 'POST') {
-        var jsonString = '';
+        let jsonString = '';
         req.on('data', function (data) {
             jsonString += data;
         });
@@ -155,7 +155,7 @@ expressApp.post('/sales',(req, res, next) =>  {
 expressApp.post('/salesdxb',(req, res, next) =>  {
 
 	if (req.method == 'POST') {
-        var jsonString = '';
+         let jsonString = '';
         req.on('data', function (data) {
             jsonString += data;
         });
@@ -175,7 +175,7 @@ expressApp.post('/salesdxb',(req, res, next) =>  {
 expressApp.post('/purchasedxb',(req, res, next) =>  {
 
 	if (req.method == 'POST') {
-        var jsonString = '';
+         let jsonString = '';
         req.on('data', function (data) {
             jsonString += data;
         });
@@ -195,7 +195,7 @@ expressApp.post('/purchasedxb',(req, res, next) =>  {
 expressApp.post('/purchase',(req, res, next) =>  {
 
 	if (req.method == 'POST') {
-        var jsonString = '';
+       let jsonString = '';
 
         req.on('data', function (data) {
             jsonString += data;
@@ -220,7 +220,7 @@ expressApp.post('/husk',(req, res, next) =>  {
 
 	if (req.method == 'POST') {
 		console.log(req);
-        var jsonString = '';
+         let jsonString = '';
         req.on('data', function (data) {
             jsonString += data;
         });
@@ -240,7 +240,7 @@ expressApp.post('/husk',(req, res, next) =>  {
 expressApp.post('/SalesIBW',(req, res, next) =>  {
 
 	if (req.method == 'POST') {
-        var jsonString = '';
+         let jsonString = '';
 
         req.on('data', function (data) {
             jsonString += data;
@@ -265,7 +265,7 @@ expressApp.post('/SalesIBW',(req, res, next) =>  {
 expressApp.post('/fees',(req, res, next) =>  {
 
 	if (req.method == 'POST') {
-        var jsonString = '';
+       let jsonString = '';
 
         req.on('data', function (data) {
             jsonString += data;
@@ -287,7 +287,7 @@ expressApp.post('/fees',(req, res, next) =>  {
 expressApp.post('/QHREC',(req, res, next) =>  {
 
 	if (req.method == 'POST') {
-        var jsonString = '';
+       let jsonString = '';
 
         req.on('data', function (data) {
             jsonString += data;
@@ -411,7 +411,7 @@ let strXml = ""; // Declare strXml explicitly // Declare strXml explicitly
       return strXml;
   };
   
-   function ledger(){
+   function ledger(data){
    let strXml = ""; // Declare strXml explicitly
   strXml += "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
   strXml += "<ENVELOPE>";
@@ -426,26 +426,26 @@ let strXml = ""; // Declare strXml explicitly // Declare strXml explicitly
   strXml += "<REQUESTDATA>";
       
   
-      for (var i = 0; i < excelData.length; i++)
+      for (var i = 0; i < data.length; i++)
                       {
-                          let CUSTOMERCODE    = (excelData[i]["CUSTOMER CODE"]);
-                          let NAME            = (excelData[i]["NAME"]);
-                          let PARENT      	= (excelData[i]["PARENT"]);
-                          let ADDRESS1  		= (excelData[i]["ADDRESS 1"]);
-                          let ADDRESS2        = (excelData[i]["ADDRESS 2"]);
-                          let ADDRESS3        = (excelData[i]["ADDRESS3"]);
-                          let STATE         	= (excelData[i]["STATE"]);
-                          let PIN          	= (excelData[i]["PIN"]);
-                          let CONTACTPERSON  	= (excelData[i]["CONTACT PERSON"]);
-                          let TELEPHONE   	= (excelData[i]["TELEPHONE NO. "]);
-                          let MOBILE 			= (excelData[i]["MOBILE NO."]);
-                          let FAX  			= (excelData[i]["FAX"]);
-                          let EMAIL  			= (excelData[i]["E-MAIL"]);
-                          let PAN  			= (excelData[i]["PAN / IT NO."]);
-                          let TIN   			= (excelData[i]["TIN "]);
-                          let CSTNO  			= (excelData[i]["CST NO"]);
-                          let OPENING 		= (excelData[i]["OPENING DR/CR"]);
-                          let Amttype  		= (excelData[i]["Amt-type"]);
+                          let CUSTOMERCODE    = (data[i]["CUSTOMER CODE"]);
+                          let NAME            = (data[i]["NAME"]);
+                          let PARENT      	= (data[i]["PARENT"]);
+                          let ADDRESS1  		= (data[i]["ADDRESS 1"]);
+                          let ADDRESS2        = (data[i]["ADDRESS 2"]);
+                          let ADDRESS3        = (data[i]["ADDRESS3"]);
+                          let STATE         	= (data[i]["STATE"]);
+                          let PIN          	= (data[i]["PIN"]);
+                          let CONTACTPERSON  	= (data[i]["CONTACT PERSON"]);
+                          let TELEPHONE   	= (data[i]["TELEPHONE NO. "]);
+                          let MOBILE 			= (data[i]["MOBILE NO."]);
+                          let FAX  			= (data[i]["FAX"]);
+                          let EMAIL  			= (data[i]["E-MAIL"]);
+                          let PAN  			= (data[i]["PAN / IT NO."]);
+                          let TIN   			= (data[i]["TIN "]);
+                          let CSTNO  			= (data[i]["CST NO"]);
+                          let OPENING 		= (data[i]["OPENING DR/CR"]);
+                          let Amttype  		= (data[i]["Amt-type"]);
                           
                           if (Amttype == "Cr" || Amttype == "CR" || Amttype == "cr"){
                               OPENING  = (OPENING * 1);
@@ -501,7 +501,7 @@ let strXml = ""; // Declare strXml explicitly // Declare strXml explicitly
       return strXml;
   };
   
-   function stock(){
+   function stock(data){
    let strXml = ""; // Declare strXml explicitly
   strXml += "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
   strXml += "<ENVELOPE>";
@@ -516,16 +516,16 @@ let strXml = ""; // Declare strXml explicitly // Declare strXml explicitly
   strXml += "<REQUESTDATA>";
       
   
-      for (var i = 0; i < excelData.length; i++)
+      for (var i = 0; i < data.length; i++)
                       {
-                          let ALIAS    		= (excelData[i]["ALIAS"]);
-                          let NAME            = (excelData[i]["NAME"]);
-                          let PARENT      	= (excelData[i]["PARENT"]);
-                          let CATEGORY  		= (excelData[i]["CATEGORY"]);
-                          let UOM        		= (excelData[i]["UOM"]);
-                          let COSTING        	= (excelData[i]["COSTING"]);
-                          let OPENINGSTOCK 	= (excelData[i]["OPENING STOCK"]);
-                          let OPENINGRATE     = (excelData[i]["OPENINGRATE"]);
+                          let ALIAS    		= (data[i]["ALIAS"]);
+                          let NAME            = (data[i]["NAME"]);
+                          let PARENT      	= (data[i]["PARENT"]);
+                          let CATEGORY  		= (data[i]["CATEGORY"]);
+                          let UOM        		= (data[i]["UOM"]);
+                          let COSTING        	= (data[i]["COSTING"]);
+                          let OPENINGSTOCK 	= (data[i]["OPENING STOCK"]);
+                          let OPENINGRATE     = (data[i]["OPENINGRATE"]);
                           let Amttype  		= ((OPENINGSTOCK * OPENINGRATE)*-1 );
                           
                           
@@ -605,7 +605,7 @@ let strXml = ""; // Declare strXml explicitly // Declare strXml explicitly
       return strXml;
   };
   
-   function sales(){
+   function sales(data){
    let strXml = ""; // Declare strXml explicitly
   strXml += "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
   strXml += "<ENVELOPE>";
@@ -995,12 +995,12 @@ let strXml = ""; // Declare strXml explicitly // Declare strXml explicitly
       
   
                           
-      for (var i = 0; i < excelData.length; i++)
+      for (var i = 0; i < data.length; i++)
                       {
-                          if ((excelData[i]["Date"]) == null ){
+                          if ((data[i]["Date"]) == null ){
                             
                           }
-                          else {let Particulars     = (excelData[i]["Particulars"]);
+                          else {let Particulars     = (data[i]["Particulars"]);
                           
                           strXml += "<TALLYMESSAGE xmlns:UDF=\"TallyUDF\">";
                           strXml += "<LEDGER NAME=\""+ Particulars  +"\" RESERVEDNAME=\"\">";
@@ -1018,9 +1018,9 @@ let strXml = ""; // Declare strXml explicitly // Declare strXml explicitly
                           strXml += "</LEDGER>";	                    
                           strXml += "</TALLYMESSAGE>";
                           
-                          let salDate    		= (excelData[i]["Date"]);
+                          let salDate    		= (data[i]["Date"]);
                           
-                          let VoucherNo   	= (excelData[i]["Voucher No."]);
+                          let VoucherNo   	= (data[i]["Voucher No."]);
                           
                           let Value	=0;
                           let igst     =0;
@@ -1030,56 +1030,56 @@ let strXml = ""; // Declare strXml explicitly // Declare strXml explicitly
                           let igstleg     ="IGST 28%";
                           let cgstleg     ="CGST 14%";
                           let sgstleg     ="SGST 14%";
-                          if ((excelData[i]["Sales 28%"]) !==null){
-                              Value  = (excelData[i]["Sales 28%"]);
-                              if ((excelData[i]["IGST 28%"]) !==null){
-                              igst  = (excelData[i]["IGST 28%"]);
-                          }else {cgst = (excelData[i]["CGST 14%"]);
-                                  sgst=(excelData[i]["SGST 14%"]);
+                          if ((data[i]["Sales 28%"]) !==null){
+                              Value  = (data[i]["Sales 28%"]);
+                              if ((data[i]["IGST 28%"]) !==null){
+                              igst  = (data[i]["IGST 28%"]);
+                          }else {cgst = (data[i]["CGST 14%"]);
+                                  sgst=(data[i]["SGST 14%"]);
                           }
-                          } else {if ((excelData[i]["Sales 18%"]) !==null){
-                              Value  = (excelData[i]["Sales 18%"]);
+                          } else {if ((data[i]["Sales 18%"]) !==null){
+                              Value  = (data[i]["Sales 18%"]);
                               salesleg	="Sales 18%";
                               igstleg     ="IGST 18%";
                               cgstleg     ="CGST 9%";
                               sgstleg     ="SGST 9%";
-                                  if ((excelData[i]["IGST 18%"]) !==null){
-                              igst  = (excelData[i]["IGST 18%"]);
-                          }else {cgst = (excelData[i]["CGST 9%"]);
-                                  sgst=(excelData[i]["SGST 9%"]);
+                                  if ((data[i]["IGST 18%"]) !==null){
+                              igst  = (data[i]["IGST 18%"]);
+                          }else {cgst = (data[i]["CGST 9%"]);
+                                  sgst=(data[i]["SGST 9%"]);
                           }							
-                          } else {if ((excelData[i]["Sales 12%"]) !==null){
-                              Value  = (excelData[i]["Sales 12%"]);
+                          } else {if ((data[i]["Sales 12%"]) !==null){
+                              Value  = (data[i]["Sales 12%"]);
                               salesleg	="Sales 12%";
                               igstleg     ="IGST 12%";
                               cgstleg     ="CGST 6%";
                               sgstleg     ="SGST 6%";
-                                  if ((excelData[i]["IGST 12%"]) !==null){
-                              igst  = (excelData[i]["IGST 12%"]);
-                          }else {cgst = (excelData[i]["CGST 6%"]);
-                                  sgst=(excelData[i]["SGST 6%"]);
+                                  if ((data[i]["IGST 12%"]) !==null){
+                              igst  = (data[i]["IGST 12%"]);
+                          }else {cgst = (data[i]["CGST 6%"]);
+                                  sgst=(data[i]["SGST 6%"]);
                           }														
-                          } else {if ((excelData[i]["Sales 5%"]) !==null){
-                              Value  = (excelData[i]["Sales 5%"]);
+                          } else {if ((data[i]["Sales 5%"]) !==null){
+                              Value  = (data[i]["Sales 5%"]);
                               salesleg	="Sales 5%";
                               igstleg     ="IGST 5%";
                               cgstleg     ="CGST 2.5%";
                               sgstleg     ="SGST 2.5%";
-                                  if ((excelData[i]["IGST 5%"]) !==null){
-                              igst  = (excelData[i]["IGST 5%"]);
-                          }else {cgst = (excelData[i]["CGST 2.5%"]);
-                                  sgst=(excelData[i]["SGST 2.5%"]);
+                                  if ((data[i]["IGST 5%"]) !==null){
+                              igst  = (data[i]["IGST 5%"]);
+                          }else {cgst = (data[i]["CGST 2.5%"]);
+                                  sgst=(data[i]["SGST 2.5%"]);
                           }														
                           }
                           }
                           }
                           }
                           
-                          let TValue        	= (excelData[i]["Gross Total"]);
+                          let TValue        	= (data[i]["Gross Total"]);
                           
                           let ROUND 		= 0;
-                          if ((excelData[i]["ROUND OFF"]) !== null ){
-                              ROUND 		= (excelData[i]["ROUND OFF"])
+                          if ((data[i]["ROUND OFF"]) !== null ){
+                              ROUND 		= (data[i]["ROUND OFF"])
                                               };
                           
                        
@@ -1196,14 +1196,14 @@ let strXml = ""; // Declare strXml explicitly // Declare strXml explicitly
        strXml += "<VATEXPAMOUNT>"+ ROUND +"</VATEXPAMOUNT>";
        strXml += "</LEDGERENTRIES.LIST>"; 
        strXml += "<ALLINVENTORYENTRIES.LIST>"; 
-       for (var t = (i+1); t < excelData.length; t++)
+       for (var t = (i+1); t < data.length; t++)
                       {
-                          if ((excelData[t]["Date"]) == null){
+                          if ((data[t]["Date"]) == null){
                             
   
-                          let Quantity  		= (excelData[t]["Quantity"]);
-                          let Rate       		= (excelData[t]["Rate"]);					
-                          let itemParticulars     = (excelData[t]["Particulars"]);
+                          let Quantity  		= (data[t]["Quantity"]);
+                          let Rate       		= (data[t]["Rate"]);					
+                          let itemParticulars     = (data[t]["Particulars"]);
                           let Rvalue       		= (Quantity * Rate);
        
        strXml += "<STOCKITEMNAME>"+itemParticulars+"</STOCKITEMNAME>"; 
@@ -1224,7 +1224,7 @@ let strXml = ""; // Declare strXml explicitly // Declare strXml explicitly
        
                                }
                           else {
-                              t = excelData.length;
+                              t = data.length;
                           };
                       };
        strXml += "<ACCOUNTINGALLOCATIONS.LIST>"; 
@@ -1255,7 +1255,7 @@ let strXml = ""; // Declare strXml explicitly // Declare strXml explicitly
       return strXml;
   };
   
-   function purchase(){
+   function purchase(data){
    let strXml = ""; // Declare strXml explicitly
   strXml += "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
   strXml += "<ENVELOPE>";
@@ -1789,12 +1789,12 @@ let strXml = ""; // Declare strXml explicitly // Declare strXml explicitly
       
   
                           
-      for (var i = 0; i < excelData.length; i++)
+      for (var i = 0; i < data.length; i++)
                       {
-                          if ((excelData[i]["Date"]) == null ){
+                          if ((data[i]["Date"]) == null ){
                             
                           }
-                          else {let Particulars     = (excelData[i]["Particulars"]);
+                          else {let Particulars     = (data[i]["Particulars"]);
                           
                           strXml += "<TALLYMESSAGE xmlns:UDF=\"TallyUDF\">";
                           strXml += "<LEDGER NAME=\""+ Particulars  +"\" RESERVEDNAME=\"\">";
@@ -1812,9 +1812,9 @@ let strXml = ""; // Declare strXml explicitly // Declare strXml explicitly
                           strXml += "</LEDGER>";	                    
                           strXml += "</TALLYMESSAGE>";
                           
-                          let salDate    		= (excelData[i]["Date"]);
+                          let salDate    		= (data[i]["Date"]);
                           
-                          let VoucherNo   	= (excelData[i]["Voucher No."]);
+                          let VoucherNo   	= (data[i]["Voucher No."]);
                           
                           let Value	=0;
                           let igst     =0;
@@ -1824,56 +1824,56 @@ let strXml = ""; // Declare strXml explicitly // Declare strXml explicitly
                           let igstleg     ="IGST 28%";
                           let cgstleg     ="CGST 14%";
                           let sgstleg     ="SGST 14%";
-                          if ((excelData[i]["Purchase 28%"]) !==null){
-                              Value  = (excelData[i]["Purchase 28%"]);
-                              if ((excelData[i]["IGST 28%"]) !==null){
-                              igst  = (excelData[i]["IGST 28%"]);
-                          }else {cgst = (excelData[i]["CGST 14%"]);
-                                  sgst=(excelData[i]["SGST 14%"]);
+                          if ((data[i]["Purchase 28%"]) !==null){
+                              Value  = (data[i]["Purchase 28%"]);
+                              if ((data[i]["IGST 28%"]) !==null){
+                              igst  = (data[i]["IGST 28%"]);
+                          }else {cgst = (data[i]["CGST 14%"]);
+                                  sgst=(data[i]["SGST 14%"]);
                           }
-                          } else {if ((excelData[i]["Purchase 18%"]) !==null){
-                              Value  = (excelData[i]["Purchase 18%"]);
+                          } else {if ((data[i]["Purchase 18%"]) !==null){
+                              Value  = (data[i]["Purchase 18%"]);
                               salesleg	="Purchase 18%";
                               igstleg     ="IGST 18%";
                               cgstleg     ="CGST 9%";
                               sgstleg     ="SGST 9%";
-                                  if ((excelData[i]["IGST 18%"]) !==null){
-                              igst  = (excelData[i]["IGST 18%"]);
-                          }else {cgst = (excelData[i]["CGST 9%"]);
-                                  sgst=(excelData[i]["SGST 9%"]);
+                                  if ((data[i]["IGST 18%"]) !==null){
+                              igst  = (data[i]["IGST 18%"]);
+                          }else {cgst = (data[i]["CGST 9%"]);
+                                  sgst=(data[i]["SGST 9%"]);
                           }							
-                          } else {if ((excelData[i]["Purchase 12%"]) !==null){
-                              Value  = (excelData[i]["Purchase 12%"]);
+                          } else {if ((data[i]["Purchase 12%"]) !==null){
+                              Value  = (data[i]["Purchase 12%"]);
                               salesleg	="Purchase 12%";
                               igstleg     ="IGST 12%";
                               cgstleg     ="CGST 6%";
                               sgstleg     ="SGST 6%";
-                                  if ((excelData[i]["IGST 12%"]) !==null){
-                              igst  = (excelData[i]["IGST 12%"]);
-                          }else {cgst = (excelData[i]["CGST 6%"]);
-                                  sgst=(excelData[i]["SGST 6%"]);
+                                  if ((data[i]["IGST 12%"]) !==null){
+                              igst  = (data[i]["IGST 12%"]);
+                          }else {cgst = (data[i]["CGST 6%"]);
+                                  sgst=(data[i]["SGST 6%"]);
                           }														
-                          } else {if ((excelData[i]["Purchase 5%"]) !==null){
-                              Value  = (excelData[i]["Purchase 5%"]);
+                          } else {if ((data[i]["Purchase 5%"]) !==null){
+                              Value  = (data[i]["Purchase 5%"]);
                               salesleg	="Purchase 5%";
                               igstleg     ="IGST 5%";
                               cgstleg     ="CGST 2.5%";
                               sgstleg     ="SGST 2.5%";
-                                  if ((excelData[i]["IGST 5%"]) !==null){
-                              igst  = (excelData[i]["IGST 5%"]);
-                          }else {cgst = (excelData[i]["CGST 2.5%"]);
-                                  sgst=(excelData[i]["SGST 2.5%"]);
+                                  if ((data[i]["IGST 5%"]) !==null){
+                              igst  = (data[i]["IGST 5%"]);
+                          }else {cgst = (data[i]["CGST 2.5%"]);
+                                  sgst=(data[i]["SGST 2.5%"]);
                           }														
                           }
                           }
                           }
                           }
                           
-                          let TValue        	= (excelData[i]["Gross Total"]);
+                          let TValue        	= (data[i]["Gross Total"]);
                           
                           let ROUND 		= 0;
-                          if ((excelData[i]["ROUND OFF"]) !== null ){
-                              ROUND 		= (excelData[i]["ROUND OFF"])
+                          if ((data[i]["ROUND OFF"]) !== null ){
+                              ROUND 		= (data[i]["ROUND OFF"])
                                               };
                           
                           
@@ -1988,14 +1988,14 @@ let strXml = ""; // Declare strXml explicitly // Declare strXml explicitly
        strXml += "<VATEXPAMOUNT>"+ ROUND +"</VATEXPAMOUNT>";
        strXml += "</LEDGERENTRIES.LIST>"; 
        strXml += "<ALLINVENTORYENTRIES.LIST>";
-       for (var t = (i+1); t < excelData.length; t++)
+       for (var t = (i+1); t < data.length; t++)
                       {
-                          if ((excelData[t]["Date"]) == null ){
+                          if ((data[t]["Date"]) == null ){
                             
   
-                          let Quantity  		= (excelData[t]["Quantity"]);
-                          let Rate       		= (excelData[t]["Rate"]);					
-                          let itemParticulars     = (excelData[t]["Particulars"]);
+                          let Quantity  		= (data[t]["Quantity"]);
+                          let Rate       		= (data[t]["Rate"]);					
+                          let itemParticulars     = (data[t]["Particulars"]);
                           let Rvalue       		= (Quantity * Rate);
         
        strXml += " <STOCKITEMNAME>"+itemParticulars+"</STOCKITEMNAME>"; 
@@ -2015,7 +2015,7 @@ let strXml = ""; // Declare strXml explicitly // Declare strXml explicitly
        strXml += "</BATCHALLOCATIONS.LIST>"; 
                                }
                           else {
-                              t = excelData.length;
+                              t = data.length;
                           };
                       };
        strXml += " <ACCOUNTINGALLOCATIONS.LIST>"; 
@@ -2047,7 +2047,7 @@ let strXml = ""; // Declare strXml explicitly // Declare strXml explicitly
   };
   
   
-   function dxbrecpay(){
+   function dxbrecpay(data){
       console.log("dxbrecpay() function called.");
    let strXml = ""; // Declare strXml explicitly
   strXml += "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
@@ -2063,15 +2063,15 @@ let strXml = ""; // Declare strXml explicitly // Declare strXml explicitly
   strXml += "<REQUESTDATA>";
       
   
-      for (var i = 0; i < excelData.length; i++){
-                          let VOUCHERTYPE     = (excelData[i]["VOUCHERTYPE"]);
-                          let DATE            = (excelData[i]["DATE"]);
-                          let NARRATION       = (excelData[i]["NARRATION"]);
-                          let VOUCHERNUMBER   = (excelData[i]["VOUCHERNUMBER"]);
-                          let DRLEDGER        = (excelData[i]["DR.LEDGER"]);
-                          let CRLEDGER        = (excelData[i]["CR.LEDGER"]);
-                          let AMOUNT          = (excelData[i]["LEDGERAMOUNT"]);
-                          let AMOUNT2          = (-(excelData[i]["LEDGERAMOUNT"]));
+      for (var i = 0; i < data.length; i++){
+                          let VOUCHERTYPE     = (data[i]["VOUCHERTYPE"]);
+                          let DATE            = (data[i]["DATE"]);
+                          let NARRATION       = (data[i]["NARRATION"]);
+                          let VOUCHERNUMBER   = (data[i]["VOUCHERNUMBER"]);
+                          let DRLEDGER        = (data[i]["DR.LEDGER"]);
+                          let CRLEDGER        = (data[i]["CR.LEDGER"]);
+                          let AMOUNT          = (data[i]["LEDGERAMOUNT"]);
+                          let AMOUNT2          = (-(data[i]["LEDGERAMOUNT"]));
                           let bool            = "";
                           let bool1           = "";
                           let bool2           = "Yes";
@@ -2081,8 +2081,8 @@ let strXml = ""; // Declare strXml explicitly // Declare strXml explicitly
                           }else {bool="No", bool1  = "Yes"};
                           
                           if (VOUCHERTYPE == "Payment" || VOUCHERTYPE == "Journal"){
-                              DRLEDGER        = (excelData[i]["CR.LEDGER"]);
-                              CRLEDGER        = (excelData[i]["DR.LEDGER"]);
+                              DRLEDGER        = (data[i]["CR.LEDGER"]);
+                              CRLEDGER        = (data[i]["DR.LEDGER"]);
                           };
                         
                           
@@ -2090,8 +2090,8 @@ let strXml = ""; // Declare strXml explicitly // Declare strXml explicitly
                                bool2           = "No";
                           };
                           if (VOUCHERTYPE == "Journal"){
-                              AMOUNT          = (-(excelData[i]["LEDGERAMOUNT"]));
-                              AMOUNT2          = (excelData[i]["LEDGERAMOUNT"]);
+                              AMOUNT          = (-(data[i]["LEDGERAMOUNT"]));
+                              AMOUNT2          = (data[i]["LEDGERAMOUNT"]);
                           };
                               
                           strXml += "<TALLYMESSAGE xmlns:UDF=\"TallyUDF\">";
@@ -2163,7 +2163,7 @@ let strXml = ""; // Declare strXml explicitly // Declare strXml explicitly
       return strXml;
   };
   
-  function dvkd(){
+  function dvkd(data){
       console.log("salesdxb() function called.");
  let strXml = ""; // Declare strXml explicitly
   strXml += "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
@@ -2178,17 +2178,17 @@ let strXml = ""; // Declare strXml explicitly // Declare strXml explicitly
   strXml += "</REQUESTDESC>";
   strXml += "<REQUESTDATA>";
                           
-      for (var i = 0; i < excelData.length; i++){
-                          let Particulars         = (excelData[i]["Particulars"]);					
-                          let salDate    			= (excelData[i]["Date"]);
-                          let VoucherNo   		= (excelData[i]["Voucher No."]);
-                          let VATDEALERTYPE   	= (excelData[i]["VATDEALERTYPE"]);
-                          let PLACEOFSUPPLY   	= (excelData[i]["PLACEOFSUPPLY"]);
-                          let SalesLEDGERNAME   	= (excelData[i]["Sales LEDGERNAME"]);
-                          let VatLEDGERNAME   	= (excelData[i]["Vat LEDGERNAME"]);
-                          let SalesAmt   			= (excelData[i]["Sales Amt"]);
-                          let Vat   				= (excelData[i]["Vat"]);
-                          let Total   			= (-(excelData[i]["Total"]));
+      for (var i = 0; i < data.length; i++){
+                          let Particulars         = (data[i]["Particulars"]);					
+                          let salDate    			= (data[i]["Date"]);
+                          let VoucherNo   		= (data[i]["Voucher No."]);
+                          let VATDEALERTYPE   	= (data[i]["VATDEALERTYPE"]);
+                          let PLACEOFSUPPLY   	= (data[i]["PLACEOFSUPPLY"]);
+                          let SalesLEDGERNAME   	= (data[i]["Sales LEDGERNAME"]);
+                          let VatLEDGERNAME   	= (data[i]["Vat LEDGERNAME"]);
+                          let SalesAmt   			= (data[i]["Sales Amt"]);
+                          let Vat   				= (data[i]["Vat"]);
+                          let Total   			= (-(data[i]["Total"]));
                           
                                                    
        strXml += "<TALLYMESSAGE xmlns:UDF=\"TallyUDF\">";
@@ -2279,7 +2279,7 @@ let strXml = ""; // Declare strXml explicitly // Declare strXml explicitly
       return strXml;
   };
   
-  function purchase1(){
+  function purchase1(data){
      let strXml = ""; // Declare strXml explicitly
       strXml += "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
       strXml += "<ENVELOPE>";
@@ -2293,19 +2293,19 @@ let strXml = ""; // Declare strXml explicitly // Declare strXml explicitly
       strXml += "</REQUESTDESC>";
       strXml += "<REQUESTDATA>";
                               
-          for (var i = 0; i < excelData.length; i++){
-                              let Particulars         = (excelData[i]["Particulars"]);					
-                              let salDate    			= (excelData[i]["Date"]);
-                              let refDate    			= (excelData[i]["Ref Date"]);
-                              let refno    			= (excelData[i]["Ref No"]);
-                              let VoucherNo   		= (excelData[i]["Voucher No."]);
-                              let VATDEALERTYPE   	= (excelData[i]["VATDEALERTYPE"]);
-                              let PLACEOFSUPPLY   	= (excelData[i]["PLACEOFSUPPLY"]);
-                              let SalesLEDGERNAME   	= (excelData[i]["Purchase LEDGERNAME"]);
-                              let VatLEDGERNAME   	= (excelData[i]["Vat LEDGERNAME"]);
-                              let SalesAmt   			= ((excelData[i]["Purchase Amt"]));
-                              let Vat   				= ((excelData[i]["Vat"]));
-                              let Total   			= (-(excelData[i]["Total"]));
+          for (var i = 0; i < data.length; i++){
+                              let Particulars         = (data[i]["Particulars"]);					
+                              let salDate    			= (data[i]["Date"]);
+                              let refDate    			= (data[i]["Ref Date"]);
+                              let refno    			= (data[i]["Ref No"]);
+                              let VoucherNo   		= (data[i]["Voucher No."]);
+                              let VATDEALERTYPE   	= (data[i]["VATDEALERTYPE"]);
+                              let PLACEOFSUPPLY   	= (data[i]["PLACEOFSUPPLY"]);
+                              let SalesLEDGERNAME   	= (data[i]["Purchase LEDGERNAME"]);
+                              let VatLEDGERNAME   	= (data[i]["Vat LEDGERNAME"]);
+                              let SalesAmt   			= ((data[i]["Purchase Amt"]));
+                              let Vat   				= ((data[i]["Vat"]));
+                              let Total   			= (-(data[i]["Total"]));
                               
                                                        
            strXml += "<TALLYMESSAGE xmlns:UDF=\"TallyUDF\">";
@@ -2399,7 +2399,7 @@ let strXml = ""; // Declare strXml explicitly // Declare strXml explicitly
       };
   
   
-  function fees(){
+  function fees(data){
    let strXml = ""; // Declare strXml explicitly
   strXml += "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
   strXml += "<ENVELOPE>";
@@ -2414,14 +2414,14 @@ let strXml = ""; // Declare strXml explicitly // Declare strXml explicitly
   strXml += "<REQUESTDATA>";
       
   
-      for (var i = 0; i < excelData.length; i++)
+      for (var i = 0; i < data.length; i++)
                       {
                          
-                          let DATE            = (excelData[i]["DATE"]);
-                          let NARRATION       = (excelData[i]["NARRATION"]);
-                          let STOCKITEMNAME   = (excelData[i]["NAME"]);
+                          let DATE            = (data[i]["DATE"]);
+                          let NARRATION       = (data[i]["NARRATION"]);
+                          let STOCKITEMNAME   = (data[i]["NAME"]);
                           let VOUCHERTYPE     = "Stock Journal"                   
-                          let AMOUNT          = (excelData[i]["AMOUNT"]);
+                          let AMOUNT          = (data[i]["AMOUNT"]);
                          
                            
                           strXml += "<TALLYMESSAGE xmlns:UDF=\"TallyUDF\">";
@@ -2518,7 +2518,7 @@ let strXml = ""; // Declare strXml explicitly // Declare strXml explicitly
       return strXml;
   };
   
-  function husk(){
+  function husk(data){
       {strXml = "";
       strXml += "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
       strXml += "<ENVELOPE>";
@@ -2531,18 +2531,18 @@ let strXml = ""; // Declare strXml explicitly // Declare strXml explicitly
       strXml += "<REPORTNAME>All Masters</REPORTNAME>";
       strXml += "</REQUESTDESC>";
       strXml += "<REQUESTDATA>";			
-      for (var i = 0; i < excelData.length; i++)
+      for (var i = 0; i < data.length; i++)
                       {
-                          let PartyName 	    = (excelData[i]["Party Name"]);
-                          let Dated 			= (excelData[i]["Date"]);
-                          let Material		= (excelData[i]["Material"]);
-                          let netwt 			= (excelData[i]["Net WT"]);
-                          let Narration 		= (excelData[i]["Narration"]);
-                          let Rate 			= (excelData[i]["Rate"]);
-                          let Rateqt 			= (excelData[i]["QT TYPE"]);
-                          let Amount 			= (excelData[i]["Amount"]);
-                          let Srno 			= (excelData[i]["Sr no"]);
-                          let Purchaseac    	= (excelData[i]["Purchase AC"]);                           
+                          let PartyName 	    = (data[i]["Party Name"]);
+                          let Dated 			= (data[i]["Date"]);
+                          let Material		= (data[i]["Material"]);
+                          let netwt 			= (data[i]["Net WT"]);
+                          let Narration 		= (data[i]["Narration"]);
+                          let Rate 			= (data[i]["Rate"]);
+                          let Rateqt 			= (data[i]["QT TYPE"]);
+                          let Amount 			= (data[i]["Amount"]);
+                          let Srno 			= (data[i]["Sr no"]);
+                          let Purchaseac    	= (data[i]["Purchase AC"]);                           
        strXml += "<TALLYMESSAGE xmlns:UDF=\"TallyUDF\">";
        strXml += "<VOUCHER REMOTEID=\"\" VCHKEY=\"\" VCHTYPE=\"Purchase\" ACTION=\"Create\" OBJVIEW=\"Invoice Voucher View\">"; 
        strXml += "<OLDAUDITENTRYIDS.LIST TYPE=\"Number\">"; 
@@ -2612,7 +2612,7 @@ let strXml = ""; // Declare strXml explicitly // Declare strXml explicitly
   };
   
   
-  function SalesIBW(){
+  function SalesIBW(data){
    let strXml = ""; // Declare strXml explicitly
   strXml += "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
   strXml += "<ENVELOPE>";
@@ -2627,27 +2627,27 @@ let strXml = ""; // Declare strXml explicitly // Declare strXml explicitly
   strXml += "<REQUESTDATA>";
          
                           
-      for (var i = 0; i < excelData.length; i++)
+      for (var i = 0; i < data.length; i++)
                       {
-                          let PartyName 	    = (excelData[i]["Party Name"]);
-                          let Dated 			= (excelData[i]["Date"]);
-                          let Material		= (excelData[i]["Material"]);
-                          let netwt 			= (excelData[i]["Net WT"]);
-                          let Narration 		= (excelData[i]["Narration"]);
-                          let Rate 			= (excelData[i]["Rate"]);
-                          let Amount 			= (excelData[i]["Amount"]);
-                          let qttype 			= (excelData[i]["QT TYPE"]);
-                          let Srno 			= (excelData[i]["Sr no"]);
-                          let Salesac	    	= (excelData[i]["Sales AC"]);
+                          let PartyName 	    = (data[i]["Party Name"]);
+                          let Dated 			= (data[i]["Date"]);
+                          let Material		= (data[i]["Material"]);
+                          let netwt 			= (data[i]["Net WT"]);
+                          let Narration 		= (data[i]["Narration"]);
+                          let Rate 			= (data[i]["Rate"]);
+                          let Amount 			= (data[i]["Amount"]);
+                          let qttype 			= (data[i]["QT TYPE"]);
+                          let Srno 			= (data[i]["Sr no"]);
+                          let Salesac	    	= (data[i]["Sales AC"]);
                           let salesAmount    	= (Amount + vatamt + upkaramt + addtaxamt + roundamt);
-                          let vat		    	= (excelData[i]["VAT AC"]);
-                          let upkar	    	= (excelData[i]["Upkar AC"]);
-                          let addtax    		= (excelData[i]["Add Tax AC"]);
-                          let Roundoffac    	= (excelData[i]["Roundoff AC"]);
-                          let vatamt	    	= (excelData[i]["VAT AMT"]);
-                          let upkaramt	   	= (excelData[i]["Upkar AMT"]);
-                          let addtaxamt	   	= (excelData[i]["Add TAX AMT"]);
-                          let roundamt	   	= (excelData[i]["Roundoff AMT"]);
+                          let vat		    	= (data[i]["VAT AC"]);
+                          let upkar	    	= (data[i]["Upkar AC"]);
+                          let addtax    		= (data[i]["Add Tax AC"]);
+                          let Roundoffac    	= (data[i]["Roundoff AC"]);
+                          let vatamt	    	= (data[i]["VAT AMT"]);
+                          let upkaramt	   	= (data[i]["Upkar AMT"]);
+                          let addtaxamt	   	= (data[i]["Add TAX AMT"]);
+                          let roundamt	   	= (data[i]["Roundoff AMT"]);
   
                               
        strXml += "<TALLYMESSAGE xmlns:UDF=\"TallyUDF\">";
@@ -2849,7 +2849,7 @@ let strXml = ""; // Declare strXml explicitly // Declare strXml explicitly
       //console.log(strXml);
       return strXml;
   };
-   function QHREC(){
+   function QHREC(data){
    let strXml = ""; // Declare strXml explicitly
   strXml += "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
   strXml += "<ENVELOPE>";
@@ -2864,21 +2864,21 @@ let strXml = ""; // Declare strXml explicitly // Declare strXml explicitly
   strXml += "<REQUESTDATA>";
       
   
-      for (var i = 0; i < excelData.length; i++)
+      for (var i = 0; i < data.length; i++)
                       {
                           let VOUCHERTYPE     = ("Receipt");
-                          let DATE            = (excelData[i]["Instrument  Date"]);
-                          let NAR       		= (excelData[i]["Instrument No"]) ;
-                          let Applicant   	= (excelData[i]["Applicant Name"]);
-                          let AppNo   		= (excelData[i]["App No"]);
-                          let OnlineRefNo 	= (excelData[i]["Online Ref No"]);
+                          let DATE            = (data[i]["Instrument  Date"]);
+                          let NAR       		= (data[i]["Instrument No"]) ;
+                          let Applicant   	= (data[i]["Applicant Name"]);
+                          let AppNo   		= (data[i]["App No"]);
+                          let OnlineRefNo 	= (data[i]["Online Ref No"]);
                           let NARRATION       = ("Chq No. " + NAR + " Applicant " + Applicant + " App No " + AppNo + " Online Ref No " + OnlineRefNo) ;
                           let VOUCHERNUMBER   = (AppNo);
-                          let BNAME   		= (excelData[i]["Bank Name"]);
+                          let BNAME   		= (data[i]["Bank Name"]);
                           let DRLEDGER        = ("Bank");
-                          let CRLEDGER        = (excelData[i]["ITS ID"]);
-                          let AMOUNT          = (excelData[i]["Amount(INR )"]);
-                          let AMOUNT2         = (-(excelData[i]["Amount(INR )"]));
+                          let CRLEDGER        = (data[i]["ITS ID"]);
+                          let AMOUNT          = (data[i]["Amount(INR )"]);
+                          let AMOUNT2         = (-(data[i]["Amount(INR )"]));
   
   
                                
